@@ -1,0 +1,13 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Geocoding Ng"></Label>
+</ActionBar>
+
+<StackLayout class="page">
+        <SearchBar hint="Your search string here" [text]="searchString" (submit)="onSubmit($event)"></SearchBar>
+        <Label text="Name: {{location.name}}"></Label>
+        <Label text="ZIP: {{location.postalCode}}"></Label>
+        <Label text="Country: {{location.country}}"></Label>
+        <Label text="Locality: {{location.locality}}"></Label>
+        <Label text="Latitude: {{location.latitude}}"></Label>
+        <Label text="Longitude: {{location.longitude}}"></Label>
+</StackLayout>
