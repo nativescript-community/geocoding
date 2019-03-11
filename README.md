@@ -32,10 +32,10 @@ import * as geocoding from "nativescript-geocoding";
 var geocoding = require("nativescript-geocoding");
 ```
 
-### Call plugin methods
+### Call the plugin
 
 ````
-  geocoding.getLocationFromName('Copenhagen Denmark').then(function (loc) {
+  geocoding.getLocationFromName('Copenhagen').then(loc => {
       console.log('Found ', loc);
   }, function (e) {
       console.log("Error: " + (e.message || e));
@@ -45,7 +45,7 @@ var geocoding = require("nativescript-geocoding");
 ### Demo
 
 To run the Angular demo:
-```bash
+```
 $ cd nativescript-geocoding/src
 $ npm run demo.ios
 $ npm run demo.android
@@ -53,10 +53,10 @@ $ npm run demo.android
 
 ### Notes
 
-For Android, the minimum API level is 21 in order to get detailed location info.
+- For Android, the minimum API level is 21 in order to get detailed location info.
 
-On iOS you will receive this message
-````
+- On iOS you may receive this message
+```
  Error: iOS CLGeocoder error : The operation couldn’t be completed. (kCLErrorDomain error 8.)
 ```
 if the CLGeocoder was not able to find anything for the search string.
