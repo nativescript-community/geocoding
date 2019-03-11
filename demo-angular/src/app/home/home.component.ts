@@ -4,16 +4,14 @@ import * as geocoding from 'nativescript-geocoding';
 ;
 
 @Component({
-    selector: "Home",
     moduleId: module.id,
+    selector: "Home",
     templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
 
     public searchString = '';
     public location = new geocoding.Location();
-    public name = '';
-    public zip = '';
 
     constructor() {
     }
@@ -23,13 +21,15 @@ export class HomeComponent implements OnInit {
 
     public onSubmit(args) {
         let searchBar = <SearchBar>args.object;
-        let that = this;
-        geocoding.getLocationFromName(searchBar.text).then(function (loc) {
-            that.location = loc;
-            console.log('Found ', loc);
+        geocoding.getLocationFromName(searchBar.text).then(loc => {
+            this.location = loc;
+            // console.log('Found ', loc);
         }, function (e) {
             console.log("Error: " + (e.message || e));
         });
+    }
+    public onSearchBarClear(args) {
+        this.location = new geocoding.Location();
     }
 
 }

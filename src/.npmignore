@@ -1,7 +1,9 @@
 *.map
 *.ts
 !*.d.ts
-tsconfig.json 
-/platforms/android/**/*
+tsconfig.json
+scripts/*
+platforms/android/*
 !platforms/android/include.gradle
-!platforms/android/nativescript_geocoding.aar
+!platforms/android/*.aar
+!platforms/android/*.jar

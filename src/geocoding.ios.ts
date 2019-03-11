@@ -1,5 +1,6 @@
 
-import * as Platform from 'platform';
+// import * as Platform from 'platform';
+import { device } from  'tns-core-modules/platform'
 import { LocationBase } from './geocoding.common';
 
 export function getLocationFromName(searchString: string): Promise<Location> {
@@ -18,7 +19,7 @@ export function getLocationFromName(searchString: string): Promise<Location> {
 }
 
 function getVersionMaj () {
-    return parseInt(Platform.device.osVersion.split(".")[0]);
+    return parseInt(device.osVersion.split(".")[0]);
 }
 
 

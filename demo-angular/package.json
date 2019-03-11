@@ -1,11 +1,11 @@
 {
   "nativescript": {
     "id": "org.nativescript.GeocodingNg",
-    "tns-android": {
-      "version": "5.2.1"
-    },
     "tns-ios": {
       "version": "5.2.0"
+    },
+    "tns-android": {
+      "version": "5.2.1"
     }
   },
   "description": "NativeScript Application",

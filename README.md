@@ -7,7 +7,7 @@ Forward-geocoding requests take a user-readable address and find the correspondi
 
 ## Installation
 
-In Command prompt / Terminal navigate to your application root folder and run:
+In a command prompt / terminal navigate to your application root folder and run:
 
 ```
 tns plugin add nativescript-geocoding
@@ -16,9 +16,9 @@ tns plugin add nativescript-geocoding
 ## Usage
 
 The best way to explore the usage of the plugin is to inspect the demo app in the plugin's root folder. 
-In `demo` folder you can find the usage of the plugin for TypeScript non-Angular application. Refer to `demo/app/main-page.ts`.
+In the `demo-angular` folder you can find the usage of the plugin for an Angular application (`demo-angular/src/app/home/home.component.ts`.
 
-In short here are the steps:
+Steps:
 
 ### Import the plugin
 
@@ -50,3 +50,13 @@ $ cd nativescript-geocoding/src
 $ npm run demo.ios
 $ npm run demo.android
 ```
+
+### Notes
+
+For Android, the minimum API level is 21 in order to get detailed location info.
+
+On iOS you will receive this message
+````
+ Error: iOS CLGeocoder error : The operation couldn’t be completed. (kCLErrorDomain error 8.)
+```
+if the CLGeocoder was not able to find anything for the search string.

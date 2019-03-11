@@ -2,14 +2,15 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "declaration": false,
+        "declaration": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "skipLibCheck": true,
         "lib": ["es6", "dom"],
-        "sourceMap": false,
+        "sourceMap": true,
         "pretty": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
@@ -18,14 +19,7 @@
         "noImplicitAny": false,
         "noImplicitReturns": true,
         "noImplicitUseStrict": false,
-        "noFallthroughCasesInSwitch": true,
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "./node_modules/tns-core-modules/*",
-                "./node_modules/*"
-            ]
-        }
+        "noFallthroughCasesInSwitch": true
     },
     "exclude": [
         "node_modules",
