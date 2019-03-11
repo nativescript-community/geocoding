@@ -5,6 +5,8 @@
 
 Forward-geocoding requests take a user-readable address and find the corresponding latitude and longitude value and may also return additional information about the specified location, such as a point of interest or building at that location.
 
+![](screenshots/nativescript-geocoding.gif?raw=true)
+
 ## Installation
 
 In a command prompt / terminal navigate to your application root folder and run:
