@@ -1,6 +1,6 @@
 {
     "name": "nativescript-geocoding",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Provides access to native geocoding APIs for NativeScript apps (android.location.Geocoder for Android, CLGeocoder for iOS).",
     "main": "geocoding",
     "typings": "index.d.ts",
