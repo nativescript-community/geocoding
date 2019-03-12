@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.0",
     "nativescript-angular": "~7.2.1",
     "nativescript-theme-core": "~1.0.4",
-    "nativescript-geocoding": "../src",
+    "nativescript-geocoding": "file:../src",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.3.0",
     "tns-core-modules": "~5.2.0",

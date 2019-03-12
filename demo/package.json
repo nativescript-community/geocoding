@@ -15,7 +15,7 @@
   "dependencies": {
     "nativescript-theme-core": "~1.0.4",
     "tns-core-modules": "~5.2.0",
-    "nativescript-geocoding": "../src"
+    "nativescript-geocoding": "file:../src"
   },
   "devDependencies": {
     "nativescript-dev-typescript": "~0.8.0",
