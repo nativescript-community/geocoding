@@ -1,0 +1,20 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <Page.actionBar>
+		<ActionBar title="Geocoding TS"/>
+	</Page.actionBar>
+    <StackLayout>
+        <SearchBar row="0" hint="Location search string" clear="onClear" submit="onSubmit"/>
+        <Label text="{{ 'Location name: ' + location.name}}"></Label>
+        <Label text="{{ 'Postal code: ' + location.postalCode}}"></Label>
+        <Label text="{{ 'Country code: ' + location.isoCountryCode}}"></Label>
+        <Label text="{{ 'Country: ' + location.country}}"></Label>
+        <Label text="{{ 'Locality: ' + location.locality}}"></Label>
+        <Label text="{{ 'Sub-locality: ' + location.subLocality}}"></Label>
+        <Label text="{{ 'Administrative Area: ' + location.administrativeArea}}"></Label>
+        <Label text="{{ 'Sub-Administrative Area: ' + location.subAdministrativeArea}}"></Label>
+        <Label text="{{ 'Thoroughfare: ' + location.thoroughfare}}"></Label>
+        <Label text="{{ 'Sub-Thoroughfare: ' + location.subThoroughfare}}"></Label>
+        <Label text="{{ 'Latitude: ' + location.latitude}}"></Label>
+        <Label text="{{ 'Longitude: ' + location.longitude}}"></Label>
+    </StackLayout>
+</Page>

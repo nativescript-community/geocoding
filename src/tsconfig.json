@@ -4,7 +4,6 @@
         "module": "commonjs",
         "declaration": true,
         "removeComments": true,
-        "preserveConstEnums": true,
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -22,8 +21,7 @@
         "noFallthroughCasesInSwitch": true
     },
     "exclude": [
-        "node_modules",
-        "platforms"
+        "node_modules"
     ],
     "compileOnSave": false
 }

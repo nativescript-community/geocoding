@@ -3,10 +3,10 @@ import { LocationBase } from "./geocoding.common";
 
 export function getLocationFromName(searchString: string): Promise<Location> {
     return new Promise(function(resolve, reject) {
-        var geocoder = getAndroidGeocoder();
-        var locations = geocoder.getFromLocationName(searchString, 1);
+        let geocoder = getAndroidGeocoder();
+        let locations = geocoder.getFromLocationName(searchString, 1);
         if (locations != null && locations.size() > 0) {
-            var loc = locations.get(0);
+            let loc = locations.get(0);
             return resolve(new Location(loc));
         }
     });
@@ -16,7 +16,7 @@ let androidGeocoder: any;
 
 function getAndroidGeocoder(): android.location.Geocoder {
     if (!androidGeocoder) {
-        var locale = java.util.Locale.getDefault();
+        let locale = java.util.Locale.getDefault();
         androidGeocoder = new android.location.Geocoder(application.android.currentContext, locale);
     }
     return androidGeocoder;
