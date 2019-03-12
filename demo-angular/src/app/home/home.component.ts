@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SearchBar } from 'tns-core-modules/ui/search-bar';
 import * as geocoding from 'nativescript-geocoding';
-;
 
 @Component({
     moduleId: module.id,

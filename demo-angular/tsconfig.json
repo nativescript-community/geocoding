@@ -15,11 +15,20 @@
         "paths": {
             "~/*": [
                 "src/*"
+            ],
+            "*": [
+                "./node_modules/tns-core-modules/*",
+                "./node_modules/*"
             ]
         }
     },
+    "include": [
+        "../src",
+        "**/*"
+    ],
     "exclude": [
         "node_modules",
-        "platforms"
+        "platforms",
+        "../src/node_modules"
     ]
 }

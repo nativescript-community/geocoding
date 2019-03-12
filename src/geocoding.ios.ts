@@ -1,6 +1,5 @@
 
-// import * as Platform from 'platform';
-import { device } from  'tns-core-modules/platform'
+import { device } from  'tns-core-modules/platform';
 import { LocationBase } from './geocoding.common';
 
 export function getLocationFromName(searchString: string): Promise<Location> {
@@ -8,7 +7,7 @@ export function getLocationFromName(searchString: string): Promise<Location> {
         getIosGeocoder().geocodeAddressStringCompletionHandler(searchString,
             (placemarks, error) => {
                 if (error) {
-                    var clError = new Error('iOS CLGeocoder error : ' + error.localizedDescription);
+                    let clError = new Error('iOS CLGeocoder error : ' + error.localizedDescription);
                     return reject(clError);
                 } else if (placemarks && placemarks.count > 0) {
                     let pm = placemarks[0];
@@ -49,7 +48,7 @@ function locationFromCLPlacemark(pm: CLPlacemark): Location {
         location.subAdministrativeArea = pm.subAdministrativeArea;
         location.locality = pm.locality;
         location.subLocality = pm.subLocality;
-        location.thoroughfare = pm.thoroughfare
+        location.thoroughfare = pm.thoroughfare;
         location.subThoroughfare = pm.subThoroughfare;
     }
 
