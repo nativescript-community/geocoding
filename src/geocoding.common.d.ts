@@ -13,3 +13,4 @@ export declare class LocationBase implements LocationDef {
     thoroughfare: string;
     subThoroughfare: string;
 }
+export declare const LOC_SEARCH_MAX_RESULTS = 10;

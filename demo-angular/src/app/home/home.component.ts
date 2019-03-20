@@ -20,13 +20,16 @@ export class HomeComponent implements OnInit {
 
     public onSubmit(args) {
         let searchBar = <SearchBar>args.object;
-        geocoding.getLocationFromName(searchBar.text).then(loc => {
-            this.location = loc;
-            // console.log('Found ', loc);
+        geocoding.getLocationListFromName(searchBar.text, 5).then(locations => {
+            console.log('Found ', locations.length);
+            if (locations.length > 0) {
+                this.location = locations[0];
+            }
         }, function (e) {
-            console.log("Error: " + (e.message || e));
+            console.log('Error: ' + (e.message || e));
         });
     }
+
     public onSearchBarClear(args) {
         this.location = new geocoding.Location();
     }

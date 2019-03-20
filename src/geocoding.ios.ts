@@ -1,6 +1,6 @@
 
 import { device } from  'tns-core-modules/platform';
-import { LocationBase } from './geocoding.common';
+import { LocationBase, LOC_SEARCH_MAX_RESULTS } from './geocoding.common';
 
 export function getLocationFromName(searchString: string): Promise<Location> {
     return new Promise(function(resolve, reject) {
@@ -12,6 +12,28 @@ export function getLocationFromName(searchString: string): Promise<Location> {
                 } else if (placemarks && placemarks.count > 0) {
                     let pm = placemarks[0];
                     resolve(locationFromCLPlacemark(pm));
+            }
+        });
+    });
+}
+
+export function getLocationListFromName(searchString: string, maxResCount?: number): Promise<Array<Location>> {
+    return new Promise(function(resolve, reject) {
+        if (!maxResCount || maxResCount < 0 || maxResCount > LOC_SEARCH_MAX_RESULTS) {
+            maxResCount = LOC_SEARCH_MAX_RESULTS;
+        }
+        getIosGeocoder().geocodeAddressStringCompletionHandler(searchString,
+            (placemarks, error) => {
+                if (error) {
+                    let clError = new Error('iOS CLGeocoder error : ' + error.localizedDescription);
+                    return reject(clError);
+                } else if (placemarks && placemarks.count > 0) {
+                    let maxRes = Math.min(placemarks.count, maxResCount);
+                    let res = new Array<Location>();
+                    for (let i = 0; i < maxRes; i++) {
+                        res.push(locationFromCLPlacemark(placemarks[i]));
+                    }
+                    resolve(res);
             }
         });
     });

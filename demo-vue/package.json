@@ -15,7 +15,7 @@
     "nativescript-theme-core": "~1.0.4",
     "nativescript-vue": "~2.0.0",
     "tns-core-modules": "~5.2.0",
-    "nativescript-geocoding": "../src"
+    "nativescript-geocoding": "file:../src"
   },
   "devDependencies": {
     "@babel/core": "~7.1.0",

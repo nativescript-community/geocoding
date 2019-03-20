@@ -1,0 +1,26 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "prettier.singleQuote": true,
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": false,
+    "html.format.enable": false,
+    "files.exclude": {
+        "**/*.css": true,
+        "**/*.js.map": true,
+        "**/*.js": { "when": "$(basename).ts"},
+        "platforms/**": true,
+        "webpack**": false
+    },
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "files.watcherExclude": {
+        "**": true
+    },
+    "files.useExperimentalFileWatcher": false,
+    "scss.lint.unknownProperties": "warning"
+  }
+
+
+
