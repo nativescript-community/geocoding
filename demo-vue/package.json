@@ -2,20 +2,20 @@
   "nativescript": {
     "id": "org.nativescript.nsvueblank",
     "tns-android": {
-      "version": "5.2.1"
+      "version": "5.4.0"
     },
     "tns-ios": {
-      "version": "5.2.0"
+      "version": "5.4.0"
     }
   },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
+    "nativescript-geocoding": "file:../src",
     "nativescript-theme-core": "~1.0.4",
     "nativescript-vue": "~2.0.0",
-    "tns-core-modules": "~5.2.0",
-    "nativescript-geocoding": "file:../src"
+    "tns-core-modules": "^5.4.1"
   },
   "devDependencies": {
     "@babel/core": "~7.1.0",
