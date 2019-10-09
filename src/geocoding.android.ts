@@ -35,7 +35,7 @@ let androidGeocoder: any;
 function getAndroidGeocoder(): android.location.Geocoder {
     if (!androidGeocoder) {
         let locale = java.util.Locale.getDefault();
-        androidGeocoder = new android.location.Geocoder(application.android.currentContext, locale);
+        androidGeocoder = new android.location.Geocoder(application.android.context, locale);
     }
     return androidGeocoder;
 }
