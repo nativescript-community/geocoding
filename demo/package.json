@@ -20,7 +20,6 @@
   "devDependencies": {
     "nativescript-dev-typescript": "~0.8.0",
     "nativescript-dev-webpack": "~1.2.0"
-
   },
   "gitHead": "f548ec926e75201ab1b7c4a3a7ceefe7a4db15af",
   "readme": "NativeScript Application"

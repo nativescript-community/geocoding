@@ -3,32 +3,31 @@
     "id": "org.nativescript.nsvueblank",
     "tns-android": {
       "version": "6.1.0"
-  },
-  "tns-ios": {
+    },
+    "tns-ios": {
       "version": "6.1.0"
-  }
-},
+    }
+  },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
-
   "dependencies": {
     "nativescript-geocoding": "file:../src",
     "nativescript-theme-core": "~1.0.4",
     "nativescript-toast": "~2.0.0",
     "nativescript-vue": "~2.4.0",
     "tns-core-modules": "^6.0.0"
-    },
-    "devDependencies": {
-        "@babel/core": "~7.1.0",
-        "@babel/preset-env": "~7.1.0",
-        "babel-loader": "~8.0.0",
-        "nativescript-dev-webpack": "^1.0.0",
-        "nativescript-vue-template-compiler": "~2.4.0",
-        "node-sass": "~4.12.0",
-        "vue-loader": "~15.4.0",
-        "typescript": "~3.4.5"
-    },
+  },
+  "devDependencies": {
+    "@babel/core": "~7.1.0",
+    "@babel/preset-env": "~7.1.0",
+    "babel-loader": "~8.0.0",
+    "nativescript-dev-webpack": "^1.0.0",
+    "nativescript-vue-template-compiler": "~2.4.0",
+    "node-sass": "~4.12.0",
+    "vue-loader": "~15.4.0",
+    "typescript": "~3.4.5"
+  },
   "gitHead": "f548ec926e75201ab1b7c4a3a7ceefe7a4db15af",
   "readme": "NativeScript Application"
 }
