@@ -8,6 +8,9 @@ export function getLocationFromName(searchString: string): Promise<Location> {
         if (locations != null && locations.size() > 0) {
             let loc = locations.get(0);
             return resolve(new Location(loc));
+        } else {
+            let androidError = new Error('Android Geocoder error : No locations found');
+            reject(androidError);
         }
     });
 }
@@ -26,6 +29,9 @@ export function getLocationListFromName(searchString: string, maxResCount?: numb
                 res.push(new Location(locations.get(i)));
             }
             return resolve(res);
+        } else {
+            let androidError = new Error('Android Geocoder error : No locations found');
+            reject(androidError);
         }
     });
 }
