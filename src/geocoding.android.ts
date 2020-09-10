@@ -60,6 +60,7 @@ export class Location extends LocationBase {
             this.isoCountryCode = androidLocation.getCountryCode();
             this.locality = androidLocation.getLocality();
             this.postalCode = androidLocation.getPostalCode();
+            this.administrativeArea = androidLocation.getAdminArea();
             this.subAdministrativeArea = androidLocation.getSubAdminArea();
             this.subLocality = androidLocation.getSubLocality();
             this.subThoroughfare = androidLocation.getSubThoroughfare();
