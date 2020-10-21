@@ -1,5 +1,5 @@
 
-import { device } from  'tns-core-modules/platform';
+import { Device } from  '@nativescript/core';
 import { LocationBase, LOC_SEARCH_MAX_RESULTS } from './geocoding.common';
 
 export function getLocationFromName(searchString: string): Promise<Location> {
@@ -40,7 +40,7 @@ export function getLocationListFromName(searchString: string, maxResCount?: numb
 }
 
 function getVersionMaj () {
-    return parseInt(device.osVersion.split(".")[0]);
+    return parseInt(Device.osVersion.split(".")[0]);
 }
 
 

@@ -5,6 +5,9 @@
 
 Forward-geocoding requests take a user-readable address and find the corresponding latitude and longitude value and may also return additional information about the specified location, such as a point of interest or building at that location.
 
+*Note*
+Version 3 and is for NativeScript 7 - use version 2 for NativeScript 4/5/6.
+
 ![](screenshots/nativescript-geocoding.gif?raw=true)
 
 ## Installation
