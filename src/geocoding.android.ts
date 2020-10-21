@@ -1,4 +1,4 @@
-import * as application from 'tns-core-modules/application';
+import { Application } from '@nativescript/core';
 import { LocationBase, LOC_SEARCH_MAX_RESULTS } from "./geocoding.common";
 
 export function getLocationFromName(searchString: string): Promise<Location> {
@@ -41,7 +41,7 @@ let androidGeocoder: any;
 function getAndroidGeocoder(): android.location.Geocoder {
     if (!androidGeocoder) {
         let locale = java.util.Locale.getDefault();
-        androidGeocoder = new android.location.Geocoder(application.android.context, locale);
+        androidGeocoder = new android.location.Geocoder(Application.android.context, locale);
     }
     return androidGeocoder;
 }
