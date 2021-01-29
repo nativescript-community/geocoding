@@ -1,9 +1,18 @@
-// Import app variables
-@import 'app-variables';
+@import '~@nativescript/theme/core';
+@import '~@nativescript/theme/default';
 
-// Import the theme’s main ruleset - both index and platform specific.
-@import '~nativescript-theme-core/scss/index';
-@import '~nativescript-theme-core/scss/platforms/index.android';
+$theme-color: #42b883;
 
-// Import common styles
-@import 'app-common';
+ActionBar {
+    background-color: $theme-color;
+    color: white;
+
+    Label {
+        color: white;
+    }
+}
+
+Button {
+    background-color: $theme-color;
+    color: white;
+}

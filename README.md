@@ -1,114 +1,90 @@
 # NativeScript Geocoding ![apple](https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-32.png) ![android](https://cdn4.iconfinder.com/data/icons/logos-3/228/android-32.png)
 
-[![npm](https://img.shields.io/npm/v/nativescript-geocoding.svg)](https://www.npmjs.com/package/nativescript-geocoding)
-[![npm](https://img.shields.io/npm/dm/nativescript-geocoding.svg)](https://www.npmjs.com/package/nativescript-geocoding)
 
-Forward-geocoding requests take a user-readable address and find the corresponding latitude and longitude value and may also return additional information about the specified location, such as a point of interest or building at that location.
+[![npm downloads](https://img.shields.io/npm/dm/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
+[![npm downloads](https://img.shields.io/npm/dt/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
+[![npm](https://img.shields.io/npm/v/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
 
-![](screenshots/nativescript-geocoding.gif?raw=true)
+Description of your plugin.
+
+| <img src="images/demo-ios.png " height="500" /> | <img src="images/demo-android.png" height="500" /> |
+| --- | ----------- |
+| iOS Demo | Android Demo |
+
+---
+## Table of Contents
+1. [Installation](#installation)
+2. [Configuration](#configuration)
+3. [API](#api)
+4. [Usage](#usage)
+9. [Contribute](#contribute)
+10. [Demos](#demos)
 
 ## Installation
+Run the following command from the root of your project:
 
-## NativeScript 7
-Version 3 of this plugin is for NativeScript 7 - use version 2 for NativeScript 4/5/6.
+`ns plugin add @nativescript-community/geocoding`
 
-In a command prompt / terminal navigate to your application root folder and run:
+## Configuration
 
-```
-tns plugin add nativescript-geocoding
-```
+Add any other additional configuration instructions here.
 
-## Usage
+## API
 
-The best way to explore the usage of the plugin is to inspect the demo app in the plugin's root folder.
-In the `demo-angular` folder you can find the usage of the plugin for an Angular application (`demo-angular/src/app/home/home.component.ts`.
+List any API events, properties, and methods for your plugin.
+### Events
 
-Steps:
+### Properties
 
-### Import the plugin
+### Methods
 
-_TypeScript_
-
-```
-import * as geocoding from "nativescript-geocoding";
-```
-
-_Javascript_
-
-```
-var geocoding = require("nativescript-geocoding");
+```ts
+export declare function getLocationFromName(searchString: string): Promise<Location>;
+export declare function getLocationListFromName(searchString: string, maxResCount?: number): Promise<Location[]>;
+export declare function getFromLocation(latitude: number, longitude: number, maxResCount?: number): Promise<Location[]>;
+export declare class Location extends LocationBase {
+    android: any; // android.location.Address;
+    ios: any; // CLPlacemark;
+}
 ```
 
-### Call the plugin
+## Demos
+This repository includes Angular, Vue.js, Svelte, and React demos. In order to run these execute the following in your terminal:
 
-```
-  geocoding.getLocationFromName('Copenhagen').then(loc => {
-      console.log('Found ', loc);
-  }, function (e) {
-      console.log("Error: " + (e.message || e));
-  });
-```
-or in case you may want to treat possible, multiple hits
-
-```
-geocoding.getLocationListFromName(searchBar.text, 5).then(locations => {
-            console.log('Found ', locations.length);
-            if (locations.length > 0) {
-                this.location = locations[0];
-            }
-        }, function (e) {
-            console.log('Error: ' + (e.message || e));
-        });
+Install Dependencies:
+```bash
+npm i # or your preferred package manager's install command
 ```
 
-
-### Demo
-
-To run the Angular demo:
-
-```
-$ cd nativescript-geocoding/src
-$ npm run demo.ios
-$ npm run demo.android
+Run Setup:
+```bash
+npm run setup
 ```
 
-## Native APIs
+Building Plugin:
+```bash
+npm run build
 
-### Android implementation
-
-- Details: https://developer.android.com/reference/android/location/Geocoder
-
-Returns an array of Addresses that are known to describe the named location, which may be a place name
-such as "Dalvik, Iceland", an address such as "1600 Amphitheatre Parkway, Mountain View, CA",
-an airport code such as "SFO", etc.. The returned addresses will be localized for the locale provided
-to this class's constructor.
-
-The query will block and returned values will be obtained by means of a network lookup. The
-results are a best guess and are not guaranteed to be meaningful or correct. It may be useful to
-call this method from a thread separate from your primary UI thread.
-
-Parameters
-locationName String: a user-supplied description of a location
-maxResults int: max number of results to return. Smaller numbers (1 to 5) are recommended
-
-### iOS implementation
-
-- Details: https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
-
-Depending on the precision of the user-provided information, you may receive one result or multiple results.
-For example, passing a string of "100 Main St., USA" may return many results unless you also specify a search
-region or additional details. To help you decide which result is correct, the geocoder actually returns
-CLPlacemark objects, which contain both the coordinate and the original information that you provided.
-
-
-## Notes
-
--   For Android, the minimum API level is 21 in order to get detailed location info.
-
--   On iOS you may receive this message
-
-```
- Error: iOS CLGeocoder error : The operation couldn’t be completed. (kCLErrorDomain error 8.)
+# or for Angular
+npm run build.angular
 ```
 
-if the CLGeocoder was not able to find anything for the search string.
+Setup Demos:
+```
+npm run demo.setup
+```
+
+Running Demos:
+```bash
+npm run demo.[ng|react|svelte|vue].[ios|android]
+
+# Example:
+npm run demo.svelte.ios
+```
+
+## Contribute
+We love PRs! Check out the [contributing guidelines](CONTRIBUTING.md). If you want to contribute, but you are not sure where to start - look for issues labeled help wanted.
+
+## Questions
+
+If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Slack Channel](https://nativescriptcommunity.slack.com/).

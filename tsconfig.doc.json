@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig",
+    "compilerOptions": {
+        "sourceRoot": null,
+        "sourceMap": false,
+        "plugins": []
+    },
+    "include": ["src/geocoding.d.ts"],
+    "exclude": ["node_modules", "plugin"]
+}
