@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/nativescript-community/geocoding/compare/v3.0.1...v3.0.2) (2021-03-11)
+
+
+### Bug Fixes
+
+* **android:** dont throw error if no loc, return [] ([7b689e2](https://github.com/nativescript-community/geocoding/commit/7b689e2e39086602c58981d3c536acd605e882e5))
+
+
+
+
+
 ## 3.0.1 (2021-01-29)
 
 
