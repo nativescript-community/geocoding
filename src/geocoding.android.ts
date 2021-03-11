@@ -76,6 +76,6 @@ export async function getFromLocation(latitude: number, longitude: number, maxRe
         }
         return res;
     } else {
-        throw new Error('Android Geocoder error : No locations found');
+        return [];
     }
 }
