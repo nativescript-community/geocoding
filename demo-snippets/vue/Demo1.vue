@@ -58,7 +58,7 @@ export default {
         },
 
         getFromLocation() {
-            geocoding.getFromLocation(45, 5, 5).then(
+            geocoding.getFromLocation(45.18896, 5.72716, 5).then(
                 locations => {
                     console.log('Found ', locations.length);
                     if (locations.length > 0) {
