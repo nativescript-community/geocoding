@@ -23,7 +23,7 @@
         "demo.vue.ios": "npm run build && cd ./demo-vue && ns run ios --no-hmr",
         "demo.vue.ios.dev": "npm run build && cd ./demo-vue && ns run ios --no-hmr --env.development",
         "doc": "typedoc --out docs --tsconfig tsconfig.doc.json --includeDeclarations --excludeExternals --mode file --ignoreCompilerErrors --excludeNotExported --excludePrivate --theme minimal",
-        "publish": "npm run setup && npm run build && npm run build.angular && lerna publish --create-release=github",
+        "publish": "npm run setup && npm run build && npm run build.angular && lerna publish --create-release=github --force-publish",
         "setup": "ts-patch install",
         "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
         "sync": "node ./tools/sync.js -w && npx sort-package-json",

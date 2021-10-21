@@ -1,0 +1,6 @@
+{
+    "uses": [
+        "android.location:Address*",
+        "android.location:Geocoder*"
+    ]
+}
