@@ -27,7 +27,7 @@ Run the following command from the root of your project:
 
 ## Configuration
 
-Add any other additional configuration instructions here.
+Ensure you request geo permissions before using the plugin, using  `@nativescript-community/perms` for instance.
 
 ## API
 
