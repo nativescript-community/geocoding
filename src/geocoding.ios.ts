@@ -8,8 +8,7 @@ export function getLocationFromName(searchString: string): Promise<Location> {
                 const clError = new Error('iOS CLGeocoder error : ' + error.localizedDescription);
                 return reject(clError);
             } else if (placemarks && placemarks.count > 0) {
-                const pm = placemarks[0];
-                resolve(locationFromCLPlacemark(pm));
+                resolve(locationFromCLPlacemark(placemarks.objectAtIndex(0)));
             }
         });
     });
@@ -28,7 +27,7 @@ export function getLocationListFromName(searchString: string, maxResCount?: numb
                 const maxRes = Math.min(placemarks.count, maxResCount);
                 const res = new Array<Location>();
                 for (let i = 0; i < maxRes; i++) {
-                    res.push(locationFromCLPlacemark(placemarks[i]));
+                    res.push(locationFromCLPlacemark(placemarks.objectAtIndex(i)));
                 }
                 resolve(res);
             }
@@ -50,7 +49,7 @@ export function getFromLocation(latitude: number, longitude: number, maxResCount
                 const maxRes = Math.min(placemarks.count, maxResCount);
                 const res = new Array<Location>();
                 for (let i = 0; i < maxRes; i++) {
-                    res.push(locationFromCLPlacemark(placemarks[i]));
+                    res.push(locationFromCLPlacemark(placemarks.objectAtIndex(i)));
                 }
                 resolve(res);
             }
@@ -65,8 +64,8 @@ function getVersionMaj() {
 function locationFromCLPlacemark(pm: CLPlacemark): Location {
     const mVer = getVersionMaj();
     const location = new Location();
-    location.latitude = pm.location.coordinate.latitude;
-    location.longitude = pm.location.coordinate.longitude;
+    location.latitude = pm.location?.coordinate?.latitude;
+    location.longitude = pm.location?.coordinate?.longitude;
     if (mVer < 11) {
         const addressDictionary = pm.addressDictionary;
         location.subThoroughfare = addressDictionary.objectForKey('SubThoroughfare');
