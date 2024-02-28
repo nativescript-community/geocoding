@@ -11,7 +11,7 @@ function wrapJavaException(ex) {
         err['stackTrace'] = com.tns.NativeScriptException.getStackTraceAsString(ex);
         return err;
     }
-	return ex;
+    return ex;
 }
 
 function getAndroidGeocoder(): android.location.Geocoder {
@@ -46,48 +46,43 @@ export class Location extends LocationBase {
 }
 export async function getLocationFromName(searchString: string): Promise<Location> {
     try {
-        
-    const geocoder = getAndroidGeocoder();
-    const locations = geocoder.getFromLocationName(searchString, 1);
-    if (locations != null && locations.size() > 0) {
-        const loc = locations.get(0);
-        return new Location(loc);
-    } else {
-        throw new Error('Android Geocoder error : No locations found');
-    }
+        const geocoder = getAndroidGeocoder();
+        const locations = geocoder.getFromLocationName(searchString, 1);
+        if (locations != null && locations.size() > 0) {
+            const loc = locations.get(0);
+            return new Location(loc);
+        } else {
+            throw new Error('Android Geocoder error : No locations found');
+        }
     } catch (error) {
         throw wrapJavaException(error);
-        
     }
 }
 
 export async function getLocationListFromName(searchString: string, maxResCount?: number): Promise<Location[]> {
     try {
-        
-    const geocoder = getAndroidGeocoder();
-    if (!maxResCount || maxResCount < 0 || maxResCount > LOC_SEARCH_MAX_RESULTS) {
-        maxResCount = LOC_SEARCH_MAX_RESULTS;
-    }
-    const locations = geocoder.getFromLocationName(searchString, maxResCount);
-    if (locations != null && locations.size() > 0) {
-        const maxRes = Math.min(locations.size(), maxResCount);
-        const res = new Array<Location>();
-        for (let i = 0; i < maxRes; i++) {
-            res.push(new Location(locations.get(i)));
+        const geocoder = getAndroidGeocoder();
+        if (!maxResCount || maxResCount < 0 || maxResCount > LOC_SEARCH_MAX_RESULTS) {
+            maxResCount = LOC_SEARCH_MAX_RESULTS;
         }
-        return res;
-    } else {
-        throw new Error('Android Geocoder error : No locations found');
-    }
+        const locations = geocoder.getFromLocationName(searchString, maxResCount);
+        if (locations != null && locations.size() > 0) {
+            const maxRes = Math.min(locations.size(), maxResCount);
+            const res = new Array<Location>();
+            for (let i = 0; i < maxRes; i++) {
+                res.push(new Location(locations.get(i)));
+            }
+            return res;
+        } else {
+            throw new Error('Android Geocoder error : No locations found');
+        }
     } catch (error) {
         throw wrapJavaException(error);
-        
     }
 }
 
 export async function getFromLocation(latitude: number, longitude: number, maxResCount?: number): Promise<Location[]> {
     try {
-        
         const geocoder = getAndroidGeocoder();
         if (!maxResCount || maxResCount < 0 || maxResCount > LOC_SEARCH_MAX_RESULTS) {
             maxResCount = LOC_SEARCH_MAX_RESULTS;
