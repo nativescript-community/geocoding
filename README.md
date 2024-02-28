@@ -1,90 +1,98 @@
-# NativeScript Geocoding ![apple](https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-32.png) ![android](https://cdn4.iconfinder.com/data/icons/logos-3/228/android-32.png)
+<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->{{ load:packages/geocoding/README.md }}
+
+[](#demos-and-development)
+
+## Demos and Development
 
 
-[![npm downloads](https://img.shields.io/npm/dm/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
-[![npm downloads](https://img.shields.io/npm/dt/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
-[![npm](https://img.shields.io/npm/v/@nativescript-community/geocoding.svg)](https://www.npmjs.com/package/@nativescript-community/geocoding)
+### Repo Setup
 
-Description of your plugin.
-
-| <img src="images/demo-ios.png " height="500" /> | <img src="images/demo-android.png" height="500" /> |
-| --- | ----------- |
-| iOS Demo | Android Demo |
-
----
-## Table of Contents
-1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [API](#api)
-4. [Usage](#usage)
-9. [Contribute](#contribute)
-10. [Demos](#demos)
-
-## Installation
-Run the following command from the root of your project:
-
-`ns plugin add @nativescript-community/geocoding`
-
-## Configuration
-
-Ensure you request geo permissions before using the plugin, using  `@nativescript-community/perms` for instance.
-
-## API
-
-List any API events, properties, and methods for your plugin.
-### Events
-
-### Properties
-
-### Methods
-
-```ts
-export declare function getLocationFromName(searchString: string): Promise<Location>;
-export declare function getLocationListFromName(searchString: string, maxResCount?: number): Promise<Location[]>;
-export declare function getFromLocation(latitude: number, longitude: number, maxResCount?: number): Promise<Location[]>;
-export declare class Location extends LocationBase {
-    android: any; // android.location.Address;
-    ios: any; // CLPlacemark;
-}
+The repo uses submodules. If you did not clone with ` --recursive` then you need to call
+```
+git submodule update --init
 ```
 
-## Demos
-This repository includes Angular, Vue.js, Svelte, and React demos. In order to run these execute the following in your terminal:
+The package manager used to install and link dependencies must be `pnpm` or `yarn`. `npm` wont work.
 
-Install Dependencies:
+To develop and test:
+if you use `yarn` then run `yarn`
+if you use `pnpm` then run `pnpm i`
+
+**Interactive Menu:**
+
+To start the interactive menu, run `npm start` (or `yarn start` or `pnpm start`). This will list all of the commonly used scripts.
+
+### Build
+
 ```bash
-npm i # or your preferred package manager's install command
+npm run build.all
 ```
+WARNING: it seems `yarn build.all` wont always work (not finding binaries in `node_modules/.bin`) which is why the doc explicitly uses `npm run`
 
-Run Setup:
-```bash
-npm run setup
-```
+### Demos
 
-Building Plugin:
-```bash
-npm run build
-
-# or for Angular
-npm run build.angular
-```
-
-Setup Demos:
-```
-npm run demo.setup
-```
-
-Running Demos:
 ```bash
 npm run demo.[ng|react|svelte|vue].[ios|android]
 
-# Example:
-npm run demo.svelte.ios
+npm run demo.svelte.ios # Example
 ```
 
-## Contribute
-We love PRs! Check out the [contributing guidelines](CONTRIBUTING.md). If you want to contribute, but you are not sure where to start - look for issues labeled help wanted.
+Demo setup is a bit special in the sense that if you want to modify/add demos you dont work directly in `demo-[ng|react|svelte|vue]`
+Instead you work in `demo-snippets/[ng|react|svelte|vue]`
+You can start from the `install.ts` of each flavor to see how to register new demos 
+
+
+[](#contributing)
+
+## Contributing
+
+### Update repo 
+
+You can update the repo files quite easily
+
+First update the submodules
+
+```bash
+npm run update
+```
+
+Then commit the changes
+Then update common files
+
+```bash
+npm run sync
+```
+Then you can run `yarn|pnpm`, commit changed files if any
+
+### Update readme 
+```bash
+npm run readme
+```
+
+### Update doc 
+```bash
+npm run doc
+```
+
+### Publish
+
+The publishing is completely handled by `lerna` (you can add `-- --bump major` to force a major release)
+Simply run 
+```shell
+npm run publish
+```
+
+### modifying submodules
+
+The repo uses https:// for submodules which means you won't be able to push directly into the submodules.
+One easy solution is t modify `~/.gitconfig` and add
+```
+[url "ssh://git@github.com/"]
+	pushInsteadOf = https://github.com/
+```
+
+[](#questions)
 
 ## Questions
 
-If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Slack Channel](https://nativescriptcommunity.slack.com/).
+If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Discord](https://nativescript.org/discord).
