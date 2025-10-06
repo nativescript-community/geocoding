@@ -58,7 +58,7 @@
         "update": "node ./tools/update.js"
     },
     "dependencies": {
-        "@nativescript-community/plugin-seed-tools": "file:tools"
+        "@nativescript-community/plugin-seed-tools": "portal:tools"
     },
     "engines": {
         "node": "^14.20.0 || ^16.13.0 || >=18.10.0",
@@ -81,5 +81,6 @@
             "demo.vue.ios": "Runs the Vue demo on iOS.",
             "watch": "Watch for changes in the plugin source and re-build."
         }
-    }
+    },
+    "packageManager": "yarn@4.10.2"
 }
