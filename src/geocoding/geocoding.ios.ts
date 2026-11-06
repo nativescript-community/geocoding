@@ -9,6 +9,8 @@ export function getLocationFromName(searchString: string): Promise<Location> {
                 return reject(clError);
             } else if (placemarks && placemarks.count > 0) {
                 resolve(locationFromCLPlacemark(placemarks.objectAtIndex(0)));
+            } else {
+                reject(new Error('iOS CLGeocoder error : No locations found'));
             }
         });
     });
@@ -30,6 +32,8 @@ export function getLocationListFromName(searchString: string, maxResCount?: numb
                     res.push(locationFromCLPlacemark(placemarks.objectAtIndex(i)));
                 }
                 resolve(res);
+            } else {
+                reject(new Error('iOS CLGeocoder error : No locations found'));
             }
         });
     });
@@ -52,6 +56,8 @@ export function getFromLocation(latitude: number, longitude: number, maxResCount
                     res.push(locationFromCLPlacemark(placemarks.objectAtIndex(i)));
                 }
                 resolve(res);
+            } else {
+                resolve([]);
             }
         });
     });
