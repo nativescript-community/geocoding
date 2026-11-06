@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2](https://github.com/nativescript-community/geocoding/compare/v3.2.1...v3.2.2) (2026-11-06)
+
+### Bug Fixes
+
+* **android:** geocode through the async listener on API 33+ ([3b3e0e3](https://github.com/nativescript-community/geocoding/commit/3b3e0e3caa4357309468ca98477bdf46cd0e04cc))
+* **ios:** settle the promise when no placemark is found ([dcc206b](https://github.com/nativescript-community/geocoding/commit/dcc206bd6365ef9350a2a6bab74a392d08d9319b))
+
 ## 3.2.1 (2024-02-28)
 
 ### Features
